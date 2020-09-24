@@ -1,0 +1,64 @@
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Simple add example</title>
+  </head>
+
+  <body>
+    
+	<input id="int1" value="0"><br>
+	<input id="int2" value="0"><br>	
+	<input id="add_ints_total" value="0" disabled><br>
+	
+	<button id="add_integers" onclick="	
+	  fetch('simple5.wasm').then(response => 
+        response.arrayBuffer()
+      ).then(bytes => 
+        WebAssembly.instantiate(bytes)
+      ).then(obj => {
+	    let int1 = document.getElementById('int1').value;
+        let int2 = document.getElementById('int2').value;
+        document.getElementById('add_ints_total').value = obj.instance.exports.add_ints(int1, int2);
+      });
+	">Add Integers</button><br>
+	
+	<hr>
+	
+	<input id="float1" value="0.0"><br>
+	<input id="float2" value="0.0"><br>	
+	<input id="add_floats_total" value="0.0" disabled><br>
+	
+	<button id="add_integers" onclick="	
+	  fetch('simple5.wasm').then(response => 
+        response.arrayBuffer()
+      ).then(bytes => 
+        WebAssembly.instantiate(bytes)
+      ).then(obj => {
+	    let float1 = document.getElementById('float1').value;
+        let float2 = document.getElementById('float2').value;
+        document.getElementById('add_floats_total').value = obj.instance.exports.add_floats(float1, float2);
+      });
+	">Add Floats</button><br>
+	
+	<hr>
+
+	<input id="fac1" value="0"><br>
+	<input id="factorial_total" value="0" disabled><br>
+	
+	<button id="calc_factorial" onclick="	
+	  fetch('simple5.wasm').then(response => 
+        response.arrayBuffer()
+      ).then(bytes => 
+        WebAssembly.instantiate(bytes)
+      ).then(obj => {
+	    let fac1 = document.getElementById('fac1').value;
+        document.getElementById('factorial_total').value = obj.instance.exports.factorial(fac1);
+      });
+	">Calculate Factorial</button><br>
+	
+	<hr>
+	
+    
+  </body>
+</html>

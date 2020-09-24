@@ -1,0 +1,1 @@
+wat2wasm.exe simple.wat -o simple.wasm
