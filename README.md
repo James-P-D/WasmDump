@@ -3,6 +3,10 @@ Dumping ground for WebAssembly scripts
 
 For more information on low-level WebAssembly programming, visit the [Mozilla website](https://developer.mozilla.org/en-US/docs/WebAssembly/Understanding_the_text_format)
 
+## Basics
+
+* [simple.wat](https://github.com/James-P-D/WasmDump/blob/master/src/simple.wat)
+
 ## Building and Hosting
 
 To compile a WebAssembly source code file (`.wat`) to a WebAssembly binary file (`.wasm`), we need to use `wat2wasm.exe` which is part of the WebAssembly Binary Toolkit, which can be built from source from [GitHub](https://github.com/WebAssembly/wabt).
