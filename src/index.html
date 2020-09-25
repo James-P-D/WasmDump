@@ -2,17 +2,45 @@
 
   <head>
     <meta charset="utf-8">
-    <title>Simple add example</title>
+    <title>Simple Wasm Examples</title>
   </head>
 
   <body>
+
+	<input id="get_99" value="0" disabled><br>
+	
+	<button onclick="	
+	  fetch('simple.wasm').then(response => 
+        response.arrayBuffer()
+      ).then(bytes => 
+        WebAssembly.instantiate(bytes)
+      ).then(obj => {
+        document.getElementById('get_99').value = obj.instance.exports.return_99();
+      });
+	">Get Constant Int</button><br>
+	
+	<hr>
+
+	<input id="get_100" value="0" disabled><br>
+	
+	<button onclick="	
+	  fetch('simple.wasm').then(response => 
+        response.arrayBuffer()
+      ).then(bytes => 
+        WebAssembly.instantiate(bytes)
+      ).then(obj => {
+        document.getElementById('get_100').value = obj.instance.exports.return_100();
+      });
+	">Get Constant Int</button><br>
+	
+	<hr>
     
 	<input id="int1" value="0"><br>
 	<input id="int2" value="0"><br>	
 	<input id="add_ints_total" value="0" disabled><br>
 	
-	<button id="add_integers" onclick="	
-	  fetch('simple5.wasm').then(response => 
+	<button onclick="	
+	  fetch('simple.wasm').then(response => 
         response.arrayBuffer()
       ).then(bytes => 
         WebAssembly.instantiate(bytes)
@@ -29,8 +57,8 @@
 	<input id="float2" value="0.0"><br>	
 	<input id="add_floats_total" value="0.0" disabled><br>
 	
-	<button id="add_integers" onclick="	
-	  fetch('simple5.wasm').then(response => 
+	<button onclick="	
+	  fetch('simple.wasm').then(response => 
         response.arrayBuffer()
       ).then(bytes => 
         WebAssembly.instantiate(bytes)
@@ -46,8 +74,8 @@
 	<input id="fac1" value="0"><br>
 	<input id="factorial_total" value="0" disabled><br>
 	
-	<button id="calc_factorial" onclick="	
-	  fetch('simple5.wasm').then(response => 
+	<button onclick="	
+	  fetch('simple.wasm').then(response => 
         response.arrayBuffer()
       ).then(bytes => 
         WebAssembly.instantiate(bytes)

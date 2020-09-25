@@ -24,9 +24,9 @@ cmake "C:\Users\jdorr\Desktop\wabt" -DCMAKE_BUILD_TYPE=RELEASE -DCMAKE_INSTALL_P
 cmake --build . --config RELEASE --target install
 ```
 
-If you struggle to build the executables yourself, you can grab the binary files from [here](https://github.com/James-P-D/WasmDump/tree/master/bin). Needless to say these files come without any warranty - use at your own risk!
+If you struggle to build the executables yourself, you can grab the binary files from [here](https://github.com/James-P-D/WasmDump/tree/master/bin).
 
-With the WebAssembly toolkit installed, we can try compiling our first WebAssembly file. Given the file (`simple.wat`)[https://github.com/James-P-D/WasmDump/blob/master/src/simple.wat] we can compile with the following:
+With the WebAssembly toolkit installed, we can try compiling our first WebAssembly file. Given the file `(simple.wat)[https://github.com/James-P-D/WasmDump/blob/master/src/simple.wat]` we can compile with the following:
 
 ```
 wat2wasm.exe simple.wat -o simple.wasm
@@ -49,4 +49,4 @@ http-server "C:\Users\jdorr\Desktop\Dev\WasmDump\src"
 
 We can now go to [http://127.0.0.1:8080/index.html](http://127.0.0.1:8080/index.html) and should see the following:
 
-SCREENSHOT
+![Screenshot](https://github.com/James-P-D/WasmDump/blob/master/screenshot.gif)
