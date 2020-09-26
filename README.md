@@ -26,7 +26,7 @@ cmake --build . --config RELEASE --target install
 
 If you struggle to build the executables yourself, you can grab the binary files from [here](https://github.com/James-P-D/WasmDump/tree/master/bin).
 
-With the WebAssembly toolkit installed, we can try compiling our first WebAssembly file. Given the file (simple.wat)[https://github.com/James-P-D/WasmDump/blob/master/src/simple.wat] we can compile with the following:
+With the WebAssembly toolkit installed, we can try compiling our first WebAssembly file. Given the file [simple.wat](https://github.com/James-P-D/WasmDump/blob/master/src/simple.wat) we can compile with the following:
 
 ```
 wat2wasm.exe simple.wat -o simple.wasm
